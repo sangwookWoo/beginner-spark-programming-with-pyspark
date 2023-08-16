@@ -87,12 +87,24 @@ C:>dir /b /s java.exe
 
 spark-shell이나 pyspark을 실행하여 스칼라 기반 셀이나 파이썬 기반 셀을 띄울 수 있다. 또한 여기서 Spark Web UI의 위치를 찾아 브라우저에서 액세스볼 수 있다.
 
+# scala version
+```
+spark-shell
+```
+
+# pyspark version
+```
+pip install py4j
+pyspark
+```
+
+
 <center><img src="img/spark-shell-web-ui.png"</center>
 
 다음으로 C:\Spark 폴더 밑에서 spark-submit으로 pi.py를 실행한다
 
 ```
-spark-submit --master local[4] ./spark-3.3.1-bin-hadoop3/examples/src/main/python/pi.py
+spark-submit --master local[4] ./spark-3.4.1-bin-hadoop3/examples/src/main/python/pi.py
 ```
 
 <center><img src="img/pi.py.png"></center>
