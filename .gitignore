@@ -2,3 +2,7 @@
 /chapter3/metastore_db
 /chapter3/data
 /chapter3/spark-warehouse
+/chapter4/data
+/chapter4/metastore_db
+/chapter4/spark-warehouse
+/chapter4/dataOutput

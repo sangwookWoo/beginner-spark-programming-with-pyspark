@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from pyspark.sql import SparkSession
 
+# 최적화를 막기 위해서, 교육적인 측면에서 일단 disabled(execution plan을 알아보기 힘듬)
 spark = SparkSession \
     .builder \
     .appName("Python Spark SQL 저장하기") \
@@ -33,6 +34,7 @@ df_join.show(10)
 spark.sql("DROP TABLE IF EXISTS bk_usc")
 spark.sql("DROP TABLE IF EXISTS bk_st")
 
+# 3개의 버킷을 기준으로 sessionid로 테이블을 만드는 걸로(Action 2개)
 df_user_session_channel.write.mode("overwrite").bucketBy(3, "sessionid").saveAsTable("bk_usc")
 df_session_timestamp.write.mode("overwrite").bucketBy(3, "sessionid").saveAsTable("bk_st")
 
